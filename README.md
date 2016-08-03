@@ -5,7 +5,7 @@ This is an implementation of IdentityServer4 on asp.core using all the newsest t
 
 ## How to run
 
-Run `net restore`
+Run `dotnet-restore`
 
 
 In Visual Studio use command kestrel from project.json file:

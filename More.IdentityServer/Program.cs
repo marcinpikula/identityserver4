@@ -13,11 +13,7 @@ namespace More.IdentityServer
         public static void Main(string[] args)
         {
             string path = Directory.GetCurrentDirectory() + @"\idsvr3test.pfx" ;
-
-            var rootPath = Path.Combine("path", "idsvr3test.pfx");
-
-            //var cert = new X509Certificate2(Path.Combine("path", "idsvr3test.pfx"), "idsrv3test"));
-            
+   
             var host = new WebHostBuilder()
                 .UseKestrel(options =>
                     options.UseHttps(new X509Certificate2(path, "idsrv3test"))
