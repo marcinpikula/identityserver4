@@ -16,7 +16,7 @@ namespace More.IdentityServer
    
             var host = new WebHostBuilder()
                 .UseKestrel(options =>
-                    options.UseHttps(new X509Certificate2(path, "idsrv3test"))
+                    options.UseHttps(Configuration.Certificates.Certificate.CertificateFile)
                 )
                 .UseUrls("https://localhost:5000/")
                 .UseContentRoot(Directory.GetCurrentDirectory())
