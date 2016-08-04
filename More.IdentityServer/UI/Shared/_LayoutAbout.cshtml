@@ -3,15 +3,51 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/tether/dist/css/tether.css" rel="stylesheet" />
+    <link href="~/css/cover.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">IdentityServer4</h3>
+                    <nav class="nav nav-masthead">
+                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="#">Administration</a>
+                        <a class="nav-link" href="#">Contact</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div>
+                @RenderBody()
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Marcin Pikula</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
+</div>
+
     <!-- scripts -->
+    <script src="~/lib/tether/dist/js/tether.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
 </body>
