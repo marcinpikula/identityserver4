@@ -14,7 +14,20 @@ namespace More.IdentityServer.Configuration
             {
                 StandardScopes.OpenId,
                 StandardScopes.Profile,
-
+                new Scope
+                 {
+                     Name = "gcmportal",
+                     DisplayName = "Generic Case Management Portal",
+                     Description = "Allow the application to access to resource.",
+                     Type = ScopeType.Resource
+                 },
+                 new Scope
+                 {
+                     Name = "gcmportalapi",
+                     DisplayName = "Generic Case Management Portal API Access",
+                     Description = "Allow the application to access to api resource.",
+                     Type = ScopeType.Resource
+                 },
                 new Scope
                 {
                     Name = "api",

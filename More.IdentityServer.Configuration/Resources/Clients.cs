@@ -12,34 +12,62 @@ namespace More.IdentityServer.Configuration
         {
             return new List<Client>
             {
-                new Client
+                 new Client
                 {
-                    ClientId = "gcmportalimplicit",
-                    ClientName = "Generic Case Management Portal",
-                    AllowedGrantTypes = GrantTypes.Implicit,
-
+                     ClientId = "gcmportalimplicit-old",
+                     ClientName = "Gcm Portal Client (Implicit)",
+                     AllowedGrantTypes = GrantTypes.Implicit,
+                     AllowedScopes = new List<string>
+                     {
+                         StandardScopes.ProfileAlwaysInclude.ToString(),
+                         "openid",
+                         "gcmportal"
+                     },
+                     
+                    // redirect = URI of the Angular application
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:3308/signin-oidc"
+                        "https://localhost:8443/main",
+                        "https://localhost:8443/callback"
                     },
-
-                    PostLogoutRedirectUris = new List<string>
+                    Claims = new List<System.Security.Claims.Claim>
                     {
-                        "http://localhost:3308/"
-                    },
 
-                    ClientSecrets = new List<Secret>
-                    {
-                        new Secret("secret".Sha256())
-                    },
-
-                    AllowedScopes = new List<string>
-                    {
-                        StandardScopes.OpenId.Name,
-                        StandardScopes.Profile.Name,
-                        "api"
                     }
-                }
+
+                },
+
+                 new Client
+                 {
+                     ClientId = "gcmportalimplicit",
+                     ClientName = "JavaScript OIDC Client",
+                     ClientUri = "https://localhost:8443/",
+                     AllowedGrantTypes = GrantTypes.Implicit,
+
+                     RedirectUris = new List<string>
+                     {
+                         "https://localhost:8443/main",
+                         "https://localhost:8443/callback",
+                     },
+                     PostLogoutRedirectUris = new List<string>
+                     {
+                         "https://localhost:8443/logout",
+                     },
+
+                     AllowedCorsOrigins = new List<string>
+                     {
+                         "https://localhost:8443"
+                     },
+
+                     AllowedScopes = new List<string>
+                     {
+                         StandardScopes.OpenId.Name,
+                         StandardScopes.Profile.Name,
+                         StandardScopes.Email.Name,
+                         StandardScopes.Roles.Name,
+                         "gcmportal"
+                     }
+}
             };
         }
     }

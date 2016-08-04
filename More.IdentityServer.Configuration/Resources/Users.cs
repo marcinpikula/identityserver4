@@ -43,6 +43,20 @@ namespace More.IdentityServer.Configuration
                         new Claim(JwtClaimTypes.Address, @"{ 'street_address': 'One Hacker Way', 'locality': 'Heidelberg', 'postal_code': 69118, 'country': 'Germany' }", Constants.ClaimValueTypes.Json)
                     }
                 },
+                 new InMemoryUser
+                {
+                    Username = "Marcin",
+                    Password = "secret",
+                    Subject = "b05d3546-6ca8-4d32-b95c-77e94d705ddf",
+                    Claims = new[]
+                    {
+                        new Claim(JwtClaimTypes.GivenName, "Marcin"),
+                        new Claim(JwtClaimTypes.FamilyName, "Pikula"),
+                        new Claim(JwtClaimTypes.Email, "map@more.no"),
+                        new Claim(JwtClaimTypes.Address, "1, Main Street, Antwerp, Belgium"),
+                        new Claim("Role", "Administrator")
+                    },
+                 }
             };
 
             return users;
