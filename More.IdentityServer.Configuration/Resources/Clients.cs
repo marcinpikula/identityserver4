@@ -46,12 +46,14 @@ namespace More.IdentityServer.Configuration
 
                      RedirectUris = new List<string>
                      {
+                         "https://localhost:8443/access_token",
+                         "https://localhost:8443/",
                          "https://localhost:8443/main",
                          "https://localhost:8443/callback",
                      },
                      PostLogoutRedirectUris = new List<string>
                      {
-                         "https://localhost:8443/logout",
+                         "http://localhost:8443/login",
                      },
 
                      AllowedCorsOrigins = new List<string>
